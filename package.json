@@ -1,0 +1,11 @@
+{
+  "name": "0xsparta",
+  "version": "1.0.0",
+  "description": "A hex-editor built on Electron",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Regan Koopmans",
+  "license": "ISC"
+}

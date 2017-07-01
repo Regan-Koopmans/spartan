@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>0xSPARTA</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+  </head>
+  <body>
+
+    <!-- Navbar -->
+
+    <nav>
+      <button id='new-file' type="button" name="button">New</button>
+      <button id='open-file' type="button" name="button">Open</button>
+      <button id='save-file' type="button" name="button">Save</button>
+    </nav>
+    <br>
+
+    <!-- Editor -->
+
+    <textarea id='editor' name="name" rows="8" cols="80">0xSPARTA</textarea>
+
+    <!-- Hex toggle -->
+    <br>
+
+    <footer>
+      <label class="switch">
+        <input id='hex-toggle' type="checkbox">
+        <div class="slider round"></div>
+      </label>
+    </footer>
+
+  </body>
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src='js/ui.js'></script>
+  <script>if (window.module) module = window.module;</script>
+</html>
