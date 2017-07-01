@@ -61,6 +61,7 @@ function convertToHex(input) {
   var i = 0;
   while(input.length > i) {
       hex += input.charCodeAt(i);
+      console.log("0xF1" + input.charCodeAt(i).toString(16));
       i++;
   }
   console.log(hex)
