@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "devDependencies": {
+    "electron": "^1.6.11"
+  },
   "author": "Regan Koopmans",
   "license": "ISC"
 }

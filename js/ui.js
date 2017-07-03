@@ -1,11 +1,15 @@
 const fs = require('fs')
 const {dialog} = require('electron').remote
-
-console.log($(document))
-
 toggle_hex = false;
-
 let editor = document.getElementById('editor')
+
+// Disable Double Click
+
+$("*").dblclick(function (e) {
+    console.log('hi');
+    e.preventDefault();
+});
+
 
 // New
 
@@ -27,7 +31,8 @@ document.getElementById('open-file').addEventListener('click', () => {
         console.log(err)
         return
       }
-      editor.value = data
+      editor.value = data;
+      toggle_hex = false;
     })
   })
 })
@@ -57,20 +62,21 @@ $(window).keypress(function(event) {
 });
 
 function convertToHex(input) {
-  var hex = 0;
-  var i = 0;
-  while(input.length > i) {
-      hex += input.charCodeAt(i);
-      console.log("0xF1" + input.charCodeAt(i).toString(16));
-      i++;
+  output = ""
+  for (let x = 0; x < input.length; ++x) {
+    code = input.charCodeAt(x).toString(16).toUpperCase();
+    output += code + " ";
   }
-  console.log(hex)
-  console.log(hex.toString(16))
-  return hex.toString(16);
+  return output
 }
 
 function convertToText(input) {
-  return String.fromCharCode(parseInt(input, 16))
+  input = input.trim().split(' ');
+  output = ""
+  for (item in input) {
+    output += String.fromCharCode(parseInt(input[item],16));
+  }
+  return output;
 }
 
 $('#hex-toggle').on('click', function() {
@@ -81,3 +87,5 @@ $('#hex-toggle').on('click', function() {
     $('#editor').val(convertToText($('#editor').val()))
   }
 })
+
+$('#editor').focus()
